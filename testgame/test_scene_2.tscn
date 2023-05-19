@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://cssr6kfl872lb"]
+
+[ext_resource type="Script" path="res://testgame/test_scene_2.gd" id="1_rq688"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_yp13b"]
+font_size = 32
+
+[node name="AnotherTest2" type="Node2D"]
+script = ExtResource("1_rq688")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 470.0
+offset_top = 238.0
+offset_right = 510.0
+offset_bottom = 286.0
+text = "Yo wazzup"
+label_settings = SubResource("LabelSettings_yp13b")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 357.0
+offset_top = 327.0
+offset_right = 806.0
+offset_bottom = 415.0
+text = "yo bub go to the really laggy scene"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

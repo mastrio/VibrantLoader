@@ -1,0 +1,172 @@
+[gd_scene load_steps=5 format=3 uid="uid://q8eypl7trlin"]
+
+[ext_resource type="Script" path="res://testgame/another_third_test_scene.gd" id="1_6cg3u"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_avfe2"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_qw74g"]
+sky_material = SubResource("ProceduralSkyMaterial_avfe2")
+
+[sub_resource type="Environment" id="Environment_ygmwv"]
+background_mode = 2
+sky = SubResource("Sky_qw74g")
+tonemap_mode = 2
+
+[node name="ThirdTestScene" type="Node3D"]
+script = ExtResource("1_6cg3u")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ygmwv")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.85004, 0, -0.526718, 0, 1, 0, 0.526718, 0, 0.85004, -2.38342, 1.34494, 2.96769)
+current = true
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+radial_segments = 100
+rings = 100
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.00053, 0, 0)
+radial_segments = 100
+rings = 100
+
+[node name="CSGSphere3D3" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.744395, 0, 0)
+radial_segments = 100
+rings = 100
+
+[node name="CSGSphere3D4" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.972944)
+radial_segments = 100
+rings = 100
+
+[node name="CSGSphere3D5" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.00053, 0, -0.972944)
+radial_segments = 100
+rings = 100
+
+[node name="CSGSphere3D6" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.744395, 0, -0.972944)
+radial_segments = 100
+rings = 100
+
+[node name="CSGSphere3D7" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.90765)
+radial_segments = 100
+rings = 100
+
+[node name="CSGSphere3D8" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.00053, 0, -1.90765)
+radial_segments = 100
+rings = 100
+
+[node name="CSGSphere3D9" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.744395, 0, -1.90765)
+radial_segments = 100
+rings = 100
+
+[node name="CSGSphere3D10" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.799833, -1.90765)
+radial_segments = 100
+rings = 100
+
+[node name="CSGSphere3D11" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.00053, 0.799833, -1.90765)
+radial_segments = 100
+rings = 100
+
+[node name="CSGSphere3D12" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.744395, 0.799833, -1.90765)
+radial_segments = 100
+rings = 100
+
+[node name="CSGSphere3D13" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.799833, -0.993207)
+radial_segments = 100
+rings = 100
+
+[node name="CSGSphere3D14" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.00053, 0.799833, -0.993207)
+radial_segments = 100
+rings = 100
+
+[node name="CSGSphere3D15" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.744395, 0.799833, -0.993207)
+radial_segments = 100
+rings = 100
+
+[node name="CSGSphere3D16" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.799833, 0.0067929)
+radial_segments = 100
+rings = 100
+
+[node name="CSGSphere3D17" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.00053, 0.799833, 0.0067929)
+radial_segments = 100
+rings = 100
+
+[node name="CSGSphere3D18" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.744395, 0.799833, 0.0067929)
+radial_segments = 100
+rings = 100
+
+[node name="CSGSphere3D19" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.71458, -1.90765)
+radial_segments = 100
+rings = 100
+
+[node name="CSGSphere3D20" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.00053, 1.71458, -1.90765)
+radial_segments = 100
+rings = 100
+
+[node name="CSGSphere3D21" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.744395, 1.71458, -1.90765)
+radial_segments = 100
+rings = 100
+
+[node name="CSGSphere3D22" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.71458, -0.993207)
+radial_segments = 100
+rings = 100
+
+[node name="CSGSphere3D23" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.00053, 1.71458, -0.993207)
+radial_segments = 100
+rings = 100
+
+[node name="CSGSphere3D24" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.744395, 1.71458, -0.993207)
+radial_segments = 100
+rings = 100
+
+[node name="CSGSphere3D25" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.71458, 0.0067929)
+radial_segments = 100
+rings = 100
+
+[node name="CSGSphere3D26" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.00053, 1.71458, 0.0067929)
+radial_segments = 100
+rings = 100
+
+[node name="CSGSphere3D27" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.744395, 1.71458, 0.0067929)
+radial_segments = 100
+rings = 100
+
+[node name="Button" type="Button" parent="."]
+offset_left = 25.0
+offset_top = 91.0
+offset_right = 293.0
+offset_bottom = 296.0
+text = "hey bub go back to the first scene"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
