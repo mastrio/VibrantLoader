@@ -1,9 +1,10 @@
+LoadingScreen
+Camera2D
 Button
 AnimationPlayer
 CSGSphere3D
 Camera3D
 TextureRect
 Label
-LoadingScreen
 AnimationTree
 Panel

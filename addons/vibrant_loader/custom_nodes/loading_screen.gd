@@ -1,5 +1,6 @@
+@icon("res://addons/vibrant_loader/custom_nodes/loading_screen.svg")
 class_name LoadingScreen
-extends Control
+extends CanvasLayer
 
 
 var scene_to_load: String
@@ -8,7 +9,7 @@ var loading_progress: Array = []
 
 
 func _process(_delta: float) -> void:
-	move_to_front()
+	layer = 100
 
 func _loading_start() -> void:
 	_scene_load()
@@ -17,7 +18,7 @@ func _loading_end() -> void:
 	_loading_completed()
 
 func _scene_load() -> void:
-	var loader: Error = ResourceLoader.load_threaded_request(scene_to_load, "", true)
+	var loader: Error = ResourceLoader.load_threaded_request(scene_to_load)
 	
 	if loader == null:
 		VibrantServer.log_error("An error occured when getting the scene")
@@ -37,8 +38,8 @@ func _scene_load() -> void:
 	
 	get_tree().root.add_child(loaded_scene)
 	get_tree().set_current_scene(loaded_scene)
+	VibrantServer.can_load_scene = true
 	_loading_end()
 
 func _loading_completed() -> void:
-	VibrantServer.can_load_scene = true
 	queue_free()

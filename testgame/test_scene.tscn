@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://bmwbkxfwn222d"]
+[gd_scene load_steps=2 format=3 uid="uid://dp8a5fjswln3w"]
 
 [ext_resource type="Script" path="res://testgame/test_scene.gd" id="1_q43px"]
 
@@ -18,5 +18,9 @@ offset_bottom = 378.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Yo do some loading bub"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(64, 320)
+zoom = Vector2(0.5, 0.5)
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
