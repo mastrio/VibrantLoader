@@ -192,7 +192,7 @@ _data = {
 }
 
 [node name="DefaultLoadingScreen" type="CanvasLayer"]
-follow_viewport_enabled = true
+layer = 100
 script = ExtResource("1_j32ho")
 
 [node name="Background" type="Panel" parent="."]
@@ -203,6 +203,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_pbovq")
+metadata/_edit_use_anchors_ = true
 
 [node name="LoadingText" type="Label" parent="Background"]
 layout_mode = 1
