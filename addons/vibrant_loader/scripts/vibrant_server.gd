@@ -2,6 +2,8 @@
 extends Node
 
 
+signal loading_scene
+
 var default_loading_screen: PackedScene = preload("res://addons/vibrant_loader/default_loading_screen.tscn")
 
 var can_load_scene = true
@@ -19,6 +21,9 @@ func load_scene(scene_to_load: String, loading_screen: PackedScene = default_loa
 		var load_screen: LoadingScreen = loading_screen.instantiate()
 		load_screen.scene_to_load = scene_to_load
 		get_tree().root.add_child(load_screen)
+		
+		loading_scene.emit(scene_to_load, load_screen)
+		
 		await get_tree().create_timer(1)
 		load_screen._loading_start()
 	else:

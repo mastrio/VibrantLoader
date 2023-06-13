@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://d2xwnexer6p40"]
 
-[ext_resource type="Script" path="res://testgame/default_loading_screen.gd" id="1_j32ho"]
+[ext_resource type="Script" path="res://addons/vibrant_loader/default_loading_screen.gd" id="1_fbie6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pbovq"]
 bg_color = Color(1, 0.337255, 0.32549, 1)
@@ -193,7 +193,7 @@ _data = {
 
 [node name="DefaultLoadingScreen" type="CanvasLayer"]
 layer = 100
-script = ExtResource("1_j32ho")
+script = ExtResource("1_fbie6")
 
 [node name="Background" type="Panel" parent="."]
 modulate = Color(1, 1, 1, 0)

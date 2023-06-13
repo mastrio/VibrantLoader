@@ -3,6 +3,10 @@ class_name LoadingScreen
 extends CanvasLayer
 
 
+signal started_loading
+signal finished_loading
+signal completed_loading
+
 var scene_to_load: String
 
 var loading_progress: Array = []
@@ -12,9 +16,11 @@ func _process(_delta: float) -> void:
 	layer = 100
 
 func _loading_start() -> void:
+	started_loading.emit()
 	_scene_load()
 
 func _loading_end() -> void:
+	finished_loading.emit()
 	_loading_completed()
 
 func _scene_load() -> void:
@@ -42,4 +48,5 @@ func _scene_load() -> void:
 	_loading_end()
 
 func _loading_completed() -> void:
+	completed_loading.emit()
 	queue_free()
