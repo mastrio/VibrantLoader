@@ -24,7 +24,7 @@ func _loading_end() -> void:
 	_loading_completed()
 
 func _scene_load() -> void:
-	var loader: Error = ResourceLoader.load_threaded_request(scene_to_load)
+	var loader: Error = ResourceLoader.load_threaded_request(scene_to_load, "", true)
 	
 	if loader == null:
 		VibrantServer.log_error("An error occured when getting the scene")

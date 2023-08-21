@@ -1,3 +1,2 @@
-res://addons/vibrant_loader/default_loading_screen.tscn
-res://addons/vibrant_loader/scripts/vibrant_server.gd
+res://testgame/test_scene.tscn
 res://addons/vibrant_loader/custom_nodes/loading_screen.gd
