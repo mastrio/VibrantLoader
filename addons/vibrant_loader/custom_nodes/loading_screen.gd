@@ -30,6 +30,7 @@ func scene_load() -> void:
 			VibrantLoader.log_error("Failed to load scene")
 			return
 	
+	await get_tree().create_timer(0.5).timeout # I don't know why but without this exact amount of delay the game will fucking crash
 	var loaded_scene: Node = ResourceLoader.load_threaded_get(scene_to_load).instantiate()
 	
 	get_tree().root.add_child(loaded_scene)
