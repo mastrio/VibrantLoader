@@ -1,21 +1,22 @@
-@icon("res://addons/vibrant_loader/script/vibrant_server.svg")
+@icon("res://addons/vibrant_loader/script/vibrant_loader.svg")
 extends Node
 
 
 signal loading_scene
 
-var default_loading_screen: PackedScene = preload("res://addons/vibrant_loader/default_loading_screen.tscn")
+const DEFAULT_LOADING_SCREEN: PackedScene = preload("res://addons/vibrant_loader/default_loading_screen.tscn")
 
+var loading_screen_layer: int = 100
 var can_load_scene = true
 
 
 func log_output(message: String) -> void:
-	print("[VibrantLoader:Log] " + message)
+	print_rich("[color=green]VibrantLoader:Log[/color] {0}".format([message]))
 
 func log_error(message: String) -> void:
-	printerr("[VibrantLoader:Error] " + message)
+	print_rich("[shake][color=red]VibrantLoader:Error[/color][/shake] {0}".format([message]))
 
-func load_scene(scene_to_load: String, loading_screen: PackedScene = default_loading_screen) -> void:
+func load_scene(scene_to_load: String, loading_screen: PackedScene = DEFAULT_LOADING_SCREEN) -> void:
 	if can_load_scene:
 		can_load_scene = false
 		var load_screen: LoadingScreen = loading_screen.instantiate()
@@ -23,8 +24,6 @@ func load_scene(scene_to_load: String, loading_screen: PackedScene = default_loa
 		get_tree().root.add_child(load_screen)
 		
 		loading_scene.emit(scene_to_load, load_screen)
-		
-		await get_tree().create_timer(1)
 		load_screen._loading_start()
 	else:
 		log_output("Failed to load scene, another scene is currently loading")

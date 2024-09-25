@@ -13,12 +13,12 @@ config_version=5
 config/name="VibrantLoader"
 config/tags=PackedStringArray("addon")
 run/main_scene="res://testgame/test_scene.tscn"
-config/features=PackedStringArray("4.1", "GL Compatibility")
+config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
-VibrantServer="*res://addons/vibrant_loader/scripts/vibrant_server.gd"
+VibrantLoader="*res://addons/vibrant_loader/scripts/vibrant_loader.gd"
 
 [dotnet]
 

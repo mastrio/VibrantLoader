@@ -1,5 +1,6 @@
 # Godot-specific ignores
 .import/
+.godot/
 export.cfg
 export_presets.cfg
 
@@ -10,5 +11,8 @@ export_presets.cfg
 .mono/
 data_*/
 
-# export stuff
+# no export nonsense
 .export/
+
+# no android nonsense
+android/

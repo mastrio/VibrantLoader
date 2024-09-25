@@ -165,8 +165,16 @@ rings = 100
 [node name="Button" type="Button" parent="."]
 offset_left = 25.0
 offset_top = 91.0
-offset_right = 293.0
-offset_bottom = 296.0
-text = "hey bub go back to the first scene"
+offset_right = 386.0
+offset_bottom = 152.0
+text = "Quick escape back to the first scene!"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 790.0
+offset_top = 545.0
+offset_right = 1051.0
+offset_bottom = 576.0
+text = "Go to fourth scene"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

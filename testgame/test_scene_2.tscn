@@ -13,7 +13,7 @@ offset_left = 470.0
 offset_top = 238.0
 offset_right = 510.0
 offset_bottom = 286.0
-text = "Yo wazzup"
+text = "This is the second scene!!!"
 label_settings = SubResource("LabelSettings_yp13b")
 
 [node name="Button" type="Button" parent="."]
@@ -21,6 +21,6 @@ offset_left = 357.0
 offset_top = 327.0
 offset_right = 806.0
 offset_bottom = 415.0
-text = "yo bub go to the really laggy scene"
+text = "Go to the slow scene"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

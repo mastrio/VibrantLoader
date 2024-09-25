@@ -75,16 +75,17 @@ offset_right = 720.0
 offset_bottom = 378.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Yo do some loading bub"
+text = "Go to the second scene"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(64, 320)
 zoom = Vector2(0.5, 0.5)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D"]
-autoplay = "THing"
 libraries = {
 "": SubResource("AnimationLibrary_a5vx0")
 }
+autoplay = "THing"
+speed_scale = 0.25
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
