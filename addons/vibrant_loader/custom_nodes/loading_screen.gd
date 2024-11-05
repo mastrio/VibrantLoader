@@ -3,34 +3,41 @@ class_name LoadingScreen
 extends CanvasLayer
 
 
-signal started_loading
-signal finished_loading
-signal completed_loading
+signal started_transition
+signal finished_transition
+signal completed_transition
 
 var scene_to_load: String
 
 var loading_progress: Array[float] = [0.0]
+var is_scene_loaded: bool = false
 
 
 func _ready() -> void:
 	layer = VibrantLoader.loading_screen_layer
-
-func scene_load() -> void:
+	
+	# Do the scene loading
 	var loader: Error = ResourceLoader.load_threaded_request(scene_to_load, "", true)
+	print("Starting loading!")
 	
 	if loader == null:
 		VibrantLoader.log_error("An error occured when getting the scene")
 		return
 	
-	get_tree().current_scene.queue_free()
-	
+	scene_load()
+
+func scene_load() -> void:
 	while ResourceLoader.load_threaded_get_status(scene_to_load, loading_progress) != ResourceLoader.THREAD_LOAD_LOADED:
 		var loading_result: ResourceLoader.ThreadLoadStatus = ResourceLoader.load_threaded_get_status(scene_to_load)
 		if loading_result == ResourceLoader.THREAD_LOAD_FAILED:
 			VibrantLoader.log_error("Failed to load scene")
 			return
+	is_scene_loaded = true
+
+func start_transition_completed() -> void:
+	get_tree().current_scene.queue_free()
+	await is_scene_loaded
 	
-	await get_tree().create_timer(0.5).timeout # I don't know why but without this exact amount of delay the game will fucking crash
 	var loaded_scene: Node = ResourceLoader.load_threaded_get(scene_to_load).instantiate()
 	
 	get_tree().root.add_child(loaded_scene)
@@ -38,12 +45,12 @@ func scene_load() -> void:
 	VibrantLoader.can_load_scene = true
 	_loading_end()
 
-func loading_completed() -> void:
-	completed_loading.emit()
+func end_transition_completed() -> void:
+	completed_transition.emit()
 	queue_free()
 
 func _loading_start() -> void:
-	started_loading.emit()
+	started_transition.emit()
 
 func _loading_end() -> void:
-	finished_loading.emit()
+	finished_transition.emit()

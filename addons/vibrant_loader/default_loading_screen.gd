@@ -1,12 +1,14 @@
 extends LoadingScreen
 
 
+const LERP_SPEED: float = 6.0
+
 var target_load_progress: float
 
 
 func _process(delta: float) -> void:
 	target_load_progress = loading_progress[0]
-	%LoadingProgress.value = lerp(%LoadingProgress.value, target_load_progress, 6.0 * delta)
+	%LoadingProgress.value = lerp(%LoadingProgress.value, target_load_progress, LERP_SPEED * delta)
 
 func _loading_start() -> void:
 	%BackgroundAnimatior.play("BackgroundFade")
@@ -16,6 +18,6 @@ func _loading_end() -> void:
 
 func _on_background_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "BackgroundFade":
-		scene_load()
+		start_transition_completed()
 	elif anim_name == "BackgroundFadeOut":
-		loading_completed()
+		end_transition_completed()

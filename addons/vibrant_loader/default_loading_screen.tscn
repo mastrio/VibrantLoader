@@ -249,5 +249,6 @@ unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_djcq6")
 }
+speed_scale = 2.0
 
 [connection signal="animation_finished" from="Background/BackgroundAnimatior" to="." method="_on_background_animation_finished"]
